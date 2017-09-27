@@ -1,0 +1,59 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ */
+ /*require_tree
+ require_self*/
+
+
+
+body{
+  background-image: url("http://www.quertime.com/wp-content/uploads/2016/08/real-life-pikachu-cat-1.jpg");
+  font-family:sans-serif;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 100%;
+}
+
+html{
+  height: 100%
+}
+
+header{
+  display: flex;
+  padding: 30px;
+}
+
+.cat-index h1 {
+  color: yellow;
+  text-decoration: underline;
+  text-decoration-color: orange;
+  font-size: 50px;
+  text-align: center;
+}
+
+.cat-index ul {
+  list-style: none;
+  font-family: fantasy;
+  color: green;
+}
+.cat-index li a {
+  display: flex;
+  font-size: 20px;
+  font-family: fantasy;
+  color: green;
+}
+
+.cat-index > a {
+  display: flow-root;
+  text-align: left;
+  color: red;
+}

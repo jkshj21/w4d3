@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NinetyNineCats</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+
+<header>
+
+<% if logged_in?%>
+<h4> Welcome, <%= current_user.username %>.</h4>
+<form action="<%=cats_url%>" method="get">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <input type="submit" value="Home">
+</form>
+<form action="<%=new_cat_rental_request_url%>" method="get">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <input type="submit" value="Make a rental request">
+</form>
+
+<form action="<%=session_url%>" method="post">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Log out">
+</form>
+<% else %>
+<form action="<%=cats_url%>" method="get">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <input type="submit" value="Home">
+</form>
+<form action="<%=new_session_url%>" method="get">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <input type="submit" value="Log in">
+</form>
+<form action="<%=new_user_url%>" method="get">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <input type="submit" value="Sign up">
+</form>
+<% end %>
+
+</header>
+
+  <body>
+
+    <%= yield %>
+
+  </body>
+</html>
